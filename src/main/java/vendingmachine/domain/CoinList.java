@@ -5,9 +5,9 @@ import java.util.List;
 
 public class CoinList {
 
-    List<Integer>coinList;
+    List<Integer> coinList;
 
-    public CoinList(){
+    public CoinList() {
         List<Integer> coinList = new ArrayList<>();
         coinList.add(Coin.COIN_500.getAmount());
         coinList.add(Coin.COIN_100.getAmount());

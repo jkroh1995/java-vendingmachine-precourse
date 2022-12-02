@@ -8,33 +8,33 @@ public class MachineMoneyValidator {
 
     String money;
 
-    public MachineMoneyValidator(String money){
+    public MachineMoneyValidator(String money) {
         this.money = money;
         validate(money);
     }
 
-    private void validate(String money){
+    private void validate(String money) {
         validateBlank(money);
         validateType(money);
         validateUnit(money);
     }
 
     private void validateBlank(String products) {
-        if(products.equals("")){
+        if (products.equals("")) {
             throw new IllegalArgumentException(ERROR_BLANK);
         }
     }
 
-    private void validateType(String money){
-        try{
+    private void validateType(String money) {
+        try {
             Integer.parseInt(money);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ERROR_TYPE);
         }
     }
 
-    private void validateUnit(String money){
-        if(Integer.parseInt(money)%10!=0){
+    private void validateUnit(String money) {
+        if (Integer.parseInt(money) % 10 != 0) {
             throw new IllegalArgumentException(ERROR_UNIT);
         }
     }

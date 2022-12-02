@@ -23,41 +23,41 @@ public class ProductsValidator {
     }
 
     private void validateCover(String products) {
-        String [] tmpArray = products.split(";");
-        for(int i=0;i< tmpArray.length;i++){
-            if(tmpArray[i].charAt(0)!='['||tmpArray[i].charAt(tmpArray[i].length()-1)!=']'){
+        String[] tmpArray = products.split(";");
+        for (String s : tmpArray) {
+            if (s.charAt(0) != '[' || s.charAt(s.length() - 1) != ']') {
                 throw new IllegalArgumentException(ERROR_COVER);
             }
         }
     }
 
     private String removeCover(String products) {
-        products = products.replace("[","");
-        products = products.replace("]","");
+        products = products.replace("[", "");
+        products = products.replace("]", "");
         return products;
     }
 
     private void validateBlank(String products) {
-        if(products.equals("")){
+        if (products.equals("")) {
             throw new IllegalArgumentException(ERROR_BLANK);
         }
     }
 
     private void validateArray(String[] products) {
-        for (int i = 0; i < products.length; i++) {
-            validateComma(products[i]);
-            validateType(products[i]);
-            validatePrice(products[i]);
-            validateUnit(products[i]);
+        for (String product : products) {
+            validateComma(product);
+            validateType(product);
+            validatePrice(product);
+            validateUnit(product);
         }
     }
 
     private void validateType(String product) {
         String[] tmpArray = product.split(",");
-        try{
+        try {
             Integer.parseInt(tmpArray[1]);
             Integer.parseInt(tmpArray[2]);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ERROR_TYPE);
         }
     }
@@ -78,14 +78,14 @@ public class ProductsValidator {
 
     private void validateComma(String product) {
         String[] tmpArray = product.split(",");
-        if (countChar(product, ',')+1 != tmpArray.length) {
+        if (countChar(product, ',') + 1 != tmpArray.length) {
             throw new IllegalArgumentException(ERROR_COMMA);
         }
     }
 
     private void validateDivide(String products) {
         String[] tmpArray = products.split(";");
-        if (countChar(products, ';')+1 != tmpArray.length) {
+        if (countChar(products, ';') + 1 != tmpArray.length) {
             throw new IllegalArgumentException(ERROR_DIVIDE);
         }
     }

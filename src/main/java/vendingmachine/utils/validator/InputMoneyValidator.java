@@ -7,7 +7,7 @@ public class InputMoneyValidator {
 
     String money;
 
-    public InputMoneyValidator(String money){
+    public InputMoneyValidator(String money) {
         this.money = money;
         validate(money);
     }
@@ -17,16 +17,16 @@ public class InputMoneyValidator {
         validateType(money);
     }
 
-    private void validateType(String money){
-        try{
+    private void validateType(String money) {
+        try {
             Integer.parseInt(money);
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ERROR_TYPE);
         }
     }
 
     private void validateBlank(String products) {
-        if(products.equals("")){
+        if (products.equals("")) {
             throw new IllegalArgumentException(ERROR_BLANK);
         }
     }

@@ -13,7 +13,7 @@ public class OutputView {
     public static final String PRINT_10 = "10원 - ";
     public static final String PRINT_INPUTMONEY = "투입 금액: ";
 
-    public OutputView(){
+    public OutputView() {
 
     }
 
@@ -21,23 +21,23 @@ public class OutputView {
         System.out.println(errorMessage);
     }
 
-    public void printMachineCoins(MachineCoins machineCoins){
+    public void printMachineCoins(MachineCoins machineCoins) {
         System.out.println(PRINT_MACHINECOINS);
-        System.out.printf(PRINT_500 +"%d개\n",machineCoins.get(0));
-        System.out.printf(PRINT_100 +"%d개\n",machineCoins.get(1));
-        System.out.printf(PRINT_50 +"%d개\n",machineCoins.get(2));
-        System.out.printf(PRINT_10 +"%d개\n",machineCoins.get(3));
+        System.out.printf(PRINT_500 + "%d개\n", machineCoins.get(0));
+        System.out.printf(PRINT_100 + "%d개\n", machineCoins.get(1));
+        System.out.printf(PRINT_50 + "%d개\n", machineCoins.get(2));
+        System.out.printf(PRINT_10 + "%d개\n", machineCoins.get(3));
     }
 
     public void printInputMoney(int inputMoney) {
-        System.out.printf(PRINT_INPUTMONEY +"%d원\n", inputMoney);
+        System.out.printf(PRINT_INPUTMONEY + "%d원\n", inputMoney);
     }
 
-    public void printResult(CoinList coinList, List<Integer> changeCoins) {
+    public void printResult(CoinList coinList, int[] changeCoins) {
         System.out.println("잔돈");
-        for(int i=0;i<coinList.size();i++){
-            if(changeCoins.get(i)!=0){
-                System.out.printf("%d원 - %d개\n",coinList.get(i),changeCoins.get(i));
+        for (int i = 0; i < coinList.size(); i++) {
+            if (changeCoins[i] != 0) {
+                System.out.printf("%d원 - %d개\n", coinList.get(i), changeCoins[i]);
             }
         }
     }

@@ -16,7 +16,7 @@ public enum Coin {
     }
 
     // 추가 기능 구현
-    public int getAmount(){
+    public int getAmount() {
         return amount;
     }
 }

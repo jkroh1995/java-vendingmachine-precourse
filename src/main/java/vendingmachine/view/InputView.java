@@ -9,33 +9,27 @@ public class InputView {
     private static final String PRINT_INPUT = "투입 금액을 입력해 주세요.";
     private static final String PRINT_BUY = "구입할 상품명을 입력해 주세요.";
 
-    public InputView(){
+    public InputView() {
 
     }
 
-    public String readMachineMoney(){
+    public String readMachineMoney() {
         System.out.println(PRINT_MACHINEMONEY);
-        String money = Console.readLine();
-        return money;
+        return Console.readLine();
     }
 
-    public String readProducts(){
+    public String readProducts() {
         System.out.println(PRINT_PRODUCTS);
-        String products = Console.readLine();
-        return products;
+        return Console.readLine();
     }
 
-    public String readInputMoney(){
+    public String readInputMoney() {
         System.out.println(PRINT_INPUT);
-        String inputMoney = Console.readLine();
-        return inputMoney;
+        return Console.readLine();
     }
 
-    public String readBuy(){
+    public String readBuy() {
         System.out.println(PRINT_BUY);
-        String buy = Console.readLine();
-        return buy;
+        return Console.readLine();
     }
-
-
 }
